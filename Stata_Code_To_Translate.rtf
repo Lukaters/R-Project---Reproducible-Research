@@ -1,0 +1,571 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww23820\viewh12660\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf0 \expnd0\expndtw0\kerning0
+set maxvar 20000\
+use "C:\\Olga\\Documents\\docs\\perspective projects\\2020\\2020 2021 Alexi job\\POLPAN data\\POLPAN19882018.dta"\
+*NHP\
+*Part I of the NHP consists of 38 questions in 6 subareas, with each question assigned a weighted value; the sum of all weighted values in a given subarea adds up to 100 \
+*energy level (EL): 3\
+*pain (P): 8\
+*emotional reaction (ER): 9\
+*sleep (S): 5\
+*social isolation (SI): 5\
+*physical abilities (PA): 8\
+*2008 NHP scores\
+fre VZ02A01\
+recode VZ02A01 (1=1) (2=0), gen (NHP1_08)\
+recode VZ02A02 (1=1) (2=0), gen (NHP2_08)\
+recode VZ02A03 (1=1) (2=0), gen (NHP3_08)\
+recode VZ02A04 (1=1) (2=0), gen (NHP4_08)\
+recode VZ02A05 (1=1) (2=0), gen (NHP5_08)\
+recode VZ02A06 (1=1) (2=0), gen (NHP6_08)\
+recode VZ02A07 (1=1) (2=0), gen (NHP7_08)\
+recode VZ02A08 (1=1) (2=0), gen (NHP8_08)\
+recode VZ02A09 (1=1) (2=0), gen (NHP9_08)\
+recode VZ02A10 (1=1) (2=0), gen (NHP10_08)\
+recode VZ02A11 (1=1) (2=0), gen (NHP11_08)\
+recode VZ02A12 (1=1) (2=0), gen (NHP12_08)\
+recode VZ02A13 (1=1) (2=0), gen (NHP13_08)\
+recode VZ02A14 (1=1) (2=0), gen (NHP14_08)\
+recode VZ02A15 (1=1) (2=0), gen (NHP15_08)\
+recode VZ02A16 (1=1) (2=0), gen (NHP16_08)\
+recode VZ02A17 (1=1) (2=0), gen (NHP17_08)\
+recode VZ02A18 (1=1) (2=0), gen (NHP18_08)\
+recode VZ02A19 (1=1) (2=0), gen (NHP19_08)\
+recode VZ02A20 (1=1) (2=0), gen (NHP20_08)\
+recode VZ02A21 (1=1) (2=0), gen (NHP21_08)\
+recode VZ02A22 (1=1) (2=0), gen (NHP22_08)\
+recode VZ02A23 (1=1) (2=0), gen (NHP23_08)\
+recode VZ02A24 (1=1) (2=0), gen (NHP24_08)\
+recode VZ02A25 (1=1) (2=0), gen (NHP25_08)\
+recode VZ02A26 (1=1) (2=0), gen (NHP26_08)\
+recode VZ02A27 (1=1) (2=0), gen (NHP27_08)\
+recode VZ02A28 (1=1) (2=0), gen (NHP28_08)\
+recode VZ02A29 (1=1) (2=0), gen (NHP29_08)\
+recode VZ02A30 (1=1) (2=0), gen (NHP30_08)\
+recode VZ02A31 (1=1) (2=0), gen (NHP31_08)\
+recode VZ02A32 (1=1) (2=0), gen (NHP32_08)\
+recode VZ02A33 (1=1) (2=0), gen (NHP33_08)\
+recode VZ02A34 (1=1) (2=0), gen (NHP34_08)\
+recode VZ02A35 (1=1) (2=0), gen (NHP35_08)\
+recode VZ02A36 (1=1) (2=0), gen (NHP36_08)\
+recode VZ02A37 (1=1) (2=0), gen (NHP37_08)\
+recode VZ02A38 (1=1) (2=0), gen (NHP38_08)\
+gen NHP_EL2008=NHP1_08*39.2+NHP12_08*36.80+NHP26_08*24.00\
+sum NHP_EL2008\
+gen NHP_P2008=NHP2_08*12.91+NHP4_08*19.74+NHP8_08*9.99+NHP19_08*11.22+NHP24_08*8.96+NHP28_08*20.86+NHP36_08*5.83+NHP38_08*10.49\
+sum NHP_P2008\
+gen NHP_ER2008=NHP3_08*10.47+NHP6_08*9.31+NHP7_08*7.22+NHP16_08*7.08+NHP20_08*9.76+NHP23_08*13.99+NHP31_08*13.95+NHP32_08*16.21+NHP37_08*12.01\
+sum NHP_ER2008\
+gen NHP_S2008=NHP5_08*22.37+NHP13_08*12.57+NHP22_08*27.26+NHP29_08*16.10+NHP33_08*21.70\
+sum NHP_S2008\
+gen NHP_SI2008=NHP9_08*22.01+NHP15_08*19.36+NHP21_08*20.13+NHP30_08*22.53+NHP34_08*15.97\
+sum NHP_SI2008\
+gen NHP_PA2008=NHP10_08*11.54+NHP11_08*10.57+NHP14_08*21.30+NHP17_08*10.79+NHP18_08*9.30+NHP25_08*12.61+NHP27_08*11.20+NHP35_08*12.69\
+sum NHP_PA2008\
+gen NHP2008=NHP_EL2008+NHP_P2008+NHP_ER2008+NHP_S2008+NHP_SI2008+NHP_PA2008\
+sum NHP2008\
+*2013 NHP scores\
+fre UR01A_01\
+recode UR01A_01 (1=1) (0=0) (else = .), gen (NHP1_13)\
+recode UR01A_02 (1=1) (0=0) (else = .), gen (NHP2_13)\
+recode UR01A_03 (1=1) (0=0) (else = .), gen (NHP3_13)\
+recode UR01A_04 (1=1) (0=0) (else = .), gen (NHP4_13)\
+recode UR01A_05 (1=1) (0=0) (else = .), gen (NHP5_13)\
+recode UR01A_06 (1=1) (0=0) (else = .), gen (NHP6_13)\
+recode UR01A_07 (1=1) (0=0) (else = .), gen (NHP7_13)\
+recode UR01A_08 (1=1) (0=0) (else = .), gen (NHP8_13)\
+recode UR01A_09 (1=1) (0=0) (else = .), gen (NHP9_13)\
+recode UR01A_10 (1=1) (0=0) (else = .), gen (NHP10_13)\
+recode UR01A_11 (1=1) (0=0) (else = .), gen (NHP11_13)\
+recode UR01A_12 (1=1) (0=0) (else = .), gen (NHP12_13)\
+recode UR01A_13 (1=1) (0=0) (else = .), gen (NHP13_13)\
+recode UR01A_14 (1=1) (0=0) (else = .), gen (NHP14_13)\
+recode UR01A_15 (1=1) (0=0) (else = .), gen (NHP15_13)\
+recode UR01A_16 (1=1) (0=0) (else = .), gen (NHP16_13)\
+recode UR01A_17 (1=1) (0=0) (else = .), gen (NHP17_13)\
+recode UR01A_18 (1=1) (0=0) (else = .), gen (NHP18_13)\
+recode UR01A_19 (1=1) (0=0) (else = .), gen (NHP19_13)\
+recode UR01A_20 (1=1) (0=0) (else = .), gen (NHP20_13)\
+recode UR01A_21 (1=1) (0=0) (else = .), gen (NHP21_13)\
+recode UR01A_22 (1=1) (0=0) (else = .), gen (NHP22_13)\
+recode UR01A_23 (1=1) (0=0) (else = .), gen (NHP23_13)\
+recode UR01A_24 (1=1) (0=0) (else = .), gen (NHP24_13)\
+recode UR01A_25 (1=1) (0=0) (else = .), gen (NHP25_13)\
+recode UR01A_26 (1=1) (0=0) (else = .), gen (NHP26_13)\
+recode UR01A_27 (1=1) (0=0) (else = .), gen (NHP27_13)\
+recode UR01A_28 (1=1) (0=0) (else = .), gen (NHP28_13)\
+recode UR01A_29 (1=1) (0=0) (else = .), gen (NHP29_13)\
+recode UR01A_30 (1=1) (0=0) (else = .), gen (NHP30_13)\
+recode UR01A_31 (1=1) (0=0) (else = .), gen (NHP31_13)\
+recode UR01A_32 (1=1) (0=0) (else = .), gen (NHP32_13)\
+recode UR01A_33 (1=1) (0=0) (else = .), gen (NHP33_13)\
+recode UR01A_34 (1=1) (0=0) (else = .), gen (NHP34_13)\
+recode UR01A_35 (1=1) (0=0) (else = .), gen (NHP35_13)\
+recode UR01A_36 (1=1) (0=0) (else = .), gen (NHP36_13)\
+recode UR01A_37 (1=1) (0=0) (else = .), gen (NHP37_13)\
+recode UR01A_38 (1=1) (0=0) (else = .), gen (NHP38_13)\
+gen NHP_EL2013=NHP1_13*39.2+NHP12_13*36.80+NHP26_13*24.00\
+sum NHP_EL2013\
+gen NHP_P2013=NHP2_13*12.91+NHP4_13*19.74+NHP8_13*9.99+NHP19_13*11.22+NHP24_13*8.96+NHP28_13*20.86+NHP36_13*5.83+NHP38_13*10.49\
+sum NHP_P2013\
+gen NHP_ER2013=NHP3_13*10.47+NHP6_13*9.31+NHP7_13*7.22+NHP16_13*7.08+NHP20_13*9.76+NHP23_13*13.99+NHP31_13*13.95+NHP32_13*16.21+NHP37_13*12.01\
+sum NHP_ER2013\
+gen NHP_S2013=NHP5_13*22.37+NHP13_13*12.57+NHP22_13*27.26+NHP29_13*16.10+NHP33_13*21.70\
+sum NHP_S2013\
+gen NHP_SI2013=NHP9_13*22.01+NHP15_13*19.36+NHP21_13*20.13+NHP30_13*22.53+NHP34_13*15.97\
+sum NHP_SI2013\
+gen NHP_PA2013=NHP10_13*11.54+NHP11_13*10.57+NHP14_13*21.30+NHP17_13*10.79+NHP18_13*9.30+NHP25_13*12.61+NHP27_13*11.20+NHP35_13*12.69\
+sum NHP_PA2013\
+gen NHP2013=NHP_EL2013+NHP_P2013+NHP_ER2013+NHP_S2013+NHP_SI2013+NHP_PA2013\
+sum NHP2013\
+*2018 NHP scores\
+fre TP09A_01\
+gen NHP_EL2018=TP09A_01*39.2+TP09A_12*36.80+TP09A_26*24.00\
+sum NHP_EL2018\
+gen NHP_P2018=TP09A_02*12.91+TP09A_04*19.74+TP09A_08*9.99+TP09A_19*11.22+TP09A_24*8.96+TP09A_28*20.86+TP09A_36*5.83+TP09A_38*10.49\
+sum NHP_P2018\
+gen NHP_ER2018=TP09A_03*10.47+TP09A_06*9.31+TP09A_07*7.22+TP09A_16*7.08+TP09A_20*9.76+TP09A_23*13.99+TP09A_31*13.95+TP09A_32*16.21+TP09A_37*12.01\
+sum NHP_ER2018\
+gen NHP_S2018=TP09A_05*22.37+TP09A_13*12.57+TP09A_22*27.26+TP09A_29*16.10+TP09A_33*21.70\
+sum NHP_S2018\
+gen NHP_SI2018=TP09A_09*22.01+TP09A_15*19.36+TP09A_21*20.13+TP09A_30*22.53+TP09A_34*15.97\
+sum NHP_SI2018\
+gen NHP_PA2018=TP09A_10*11.54+TP09A_11*10.57+TP09A_14*21.30+TP09A_17*10.79+TP09A_18*9.30+TP09A_25*12.61+TP09A_27*11.20+TP09A_35*12.69\
+sum NHP_PA2018\
+gen NHP2018=NHP_EL2018+NHP_P2018+NHP_ER2018+NHP_S2018+NHP_SI2018+NHP_PA2018\
+sum NHP2018\
+\
+tab GENDER if !missing( NHP2018) & !missing(NHP2013) & !missing(NHP2008)\
+sum YRBIRTH if !missing( NHP2018) & !missing(NHP2013) & !missing(NHP2008)\
+tab GENDER if !missing( NHP2018) & !missing(NHP2008)\
+tab GENDER if !missing( NHP2018) & !missing(NHP2013)\
+tab GENDER if !missing( NHP2008) & !missing(NHP2013)\
+\
+//Subjective mobility \
+recode VW05 (1=5) (2=4) (3=3) (4=2) (5=1), gen(SUBJMOB2008)\
+label define  SUBJMOB2008l 1 "Much lower" 5 "Much higher"\
+label values SUBJMOB2008 SUBJMOB2008l\
+tab SUBJMOB2008 \
+fre UM05\
+recode UM05 (1=5) (2=4) (3=3) (4=2) (5=1), gen(SUBJMOB2013)\
+label define  SUBJMOB2013l 1 "Much lower" 5 "Much higher"\
+label values SUBJMOB2013 SUBJMOB2013l\
+tab SUBJMOB2013 \
+fre TM31\
+recode TM31 (1=5) (2=4) (3=3) (4=2) (5=1), gen(SUBJMOB2018)\
+label define  SUBJMOB2018l 1 "Much lower" 5 "Much higher"\
+label values SUBJMOB2018 SUBJMOB2018l\
+tab SUBJMOB2018 \
+\
+\
+//Job \
+rename JOB2008_SEI JOB2008\
+rename JOB2013_SEI JOB2013\
+rename JOB2018_SEI JOB2018\
+\
+//Subjective position \
+fre VM01\
+recode VM01 (1=10) (2=9) (3=8) (4=7) (5=6) (6=5) (7=4) (8=3) (9=2) (10=1), gen(SUBJPOSIT2008)\
+label define SUBJPOSIT2008l 1 "lowest" 10 "highest" \
+label values SUBJPOSIT2008 SUBJPOSIT2008l\
+tab SUBJPOSIT2008\
+fre UB04\
+recode UB04 (0/1=1), gen(SUBJPOSIT2013)\
+label define SUBJPOSIT2013l 1 "lowest" 10 "highest" \
+label values SUBJPOSIT2013 SUBJPOSIT2013l\
+tab SUBJPOSIT2013\
+fre TD01\
+recode TD01 (0/1=1), gen(SUBJPOSIT2018)\
+label define SUBJPOSIT2018l 1 "lowest" 10 "highest" \
+label values SUBJPOSIT2018 SUBJPOSIT2018l\
+tab SUBJPOSIT2018\
+\
+//marital status \
+fre VR01\
+recode VR01 (2=1) (1 3 4 5=0), gen(MARRIED2008)\
+tab MARRIED2008\
+fre UK01\
+recode UK01 (2=1) (1 3 4 5=0), gen(MARRIED2013)\
+tab MARRIED2013\
+fre TK01\
+recode TK01 (2=1) (1 3 4 5=0), gen(MARRIED2018)\
+tab MARRIED2018\
+\
+//Average household income \
+egen STDINC2008 = std(VR22)\
+//tab STDINC2008\
+egen STDINC2013 = std(UK21)\
+//tab STDINC2013\
+egen STDINC2018 = std(TK21)\
+//tab STDINC2018\
+\
+//AGESQ\
+gen AGESQ2008=AGE2008^2\
+gen AGESQ2013=AGE2013^2\
+gen AGESQ2018=AGE2018^2\
+\
+keep ANONID WAVE2008 WAVE2013 WAVE2018 GENDER YRBIRTH AGE2008 AGE2013 AGE2018 VOIVOD2008 VOIVOD2013 VOIVOD2018 SIZE2018 SIZE2013 SIZE2008 EDUC2008 EDUC2013 EDUC2018 JOB2018 JOB2013 JOB2008  AGESQ2018 AGESQ2013 AGESQ2008 STDINC2018 STDINC2013 STDINC2008 MARRIED2018 MARRIED2013 MARRIED2008 SUBJPOSIT2018 SUBJPOSIT2013 SUBJPOSIT2008 SUBJMOB2018 SUBJMOB2013 SUBJMOB2008 NHP2018 NHP2013 NHP2008 NHP_EL2008 NHP_ER2008 NHP_P2008 NHP_PA2008 NHP_S2008 NHP_SI2008 NHP_EL2013 NHP_ER2013 NHP_P2013 NHP_PA2013 NHP_S2013 NHP_SI2013 NHP_EL2018 NHP_ER2018 NHP_P2018 NHP_PA2018 NHP_S2018 NHP_SI2018\
+\
+#JAE############################################\
+\
+///////////////////////////////reshaping wide data into long \
+reshape long AGE VOIVOD SIZE EDUC JOB STDREGGDP AGESQ STDINC MARRIED SUBJPOSIT SUBJMOB NHP NHP_EL NHP_ER NHP_P NHP_PA NHP_S NHP_SI, i(ANONID) j(YEAR)\
+generate TIME = 1 + (YEAR - 2008)/5\
+tab TIME\
+// setting for fixed effects models\
+xtset ANONID TIME\
+\
+*energy level (EL)\
+*pain (P)\
+*emotional reaction (ER)\
+*sleep (S)\
+*social isolation (SI)\
+*physical abilities (PA)\
+//fixed effects \
+eststo clear\
+eststo: quietly xtreg NHP_EL AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, fe\
+eststo: quietly xtreg NHP_ER AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, fe\
+eststo: quietly xtreg NHP_P AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, fe\
+eststo: quietly xtreg NHP_PA AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, fe\
+eststo: quietly xtreg NHP_S AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, fe\
+eststo: quietly xtreg NHP_SI AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, fe\
+eststo: quietly xtreg NHP AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, fe\
+esttab, compress \
+eststo clear\
+//random effects \
+eststo clear\
+eststo: quietly xtreg NHP_EL AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, re\
+eststo: quietly xtreg NHP_ER AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, re\
+eststo: quietly xtreg NHP_P AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, re\
+eststo: quietly xtreg NHP_PA AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, re\
+eststo: quietly xtreg NHP_S AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, re\
+eststo: quietly xtreg NHP_SI AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, re\
+eststo: quietly xtreg NHP AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, re\
+esttab, compress\
+eststo clear\
+//random effects + gender (2=female)\
+eststo clear\
+eststo: quietly xtreg NHP_EL AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME GENDER, re\
+eststo: quietly xtreg NHP_ER AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME GENDER, re\
+eststo: quietly xtreg NHP_P AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME GENDER, re\
+eststo: quietly xtreg NHP_PA AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME GENDER, re\
+eststo: quietly xtreg NHP_S AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME GENDER, re\
+eststo: quietly xtreg NHP_SI AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME GENDER, re\
+eststo: quietly xtreg NHP AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME GENDER, re\
+esttab, compress\
+eststo clear\
+//fixed effects by gender\
+//males \
+eststo clear\
+eststo: quietly xtreg NHP_EL AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==1, fe\
+eststo: quietly xtreg NHP_ER AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==1, fe\
+eststo: quietly xtreg NHP_P AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==1, fe\
+eststo: quietly xtreg NHP_PA AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==1, fe\
+eststo: quietly xtreg NHP_S AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==1, fe\
+eststo: quietly xtreg NHP_SI AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==1, fe\
+eststo: quietly xtreg NHP AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==1, fe\
+esttab, compress\
+eststo clear\
+//females \
+eststo clear\
+eststo: quietly xtreg NHP_EL AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==2, fe\
+eststo: quietly xtreg NHP_ER AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==2, fe\
+eststo: quietly xtreg NHP_P AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==2, fe\
+eststo: quietly xtreg NHP_PA AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==2, fe\
+eststo: quietly xtreg NHP_S AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==2, fe\
+eststo: quietly xtreg NHP_SI AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==2, fe\
+eststo: quietly xtreg NHP AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==2, fe\
+esttab, compress\
+eststo clear\
+//random effects by gender\
+//males \
+eststo clear\
+eststo: quietly xtreg NHP_EL AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==1, re\
+eststo: quietly xtreg NHP_ER AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==1, re\
+eststo: quietly xtreg NHP_P AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==1, re\
+eststo: quietly xtreg NHP_PA AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==1, re\
+eststo: quietly xtreg NHP_S AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==1, re\
+eststo: quietly xtreg NHP_SI AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==1, re\
+eststo: quietly xtreg NHP AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==1, re\
+esttab, compress\
+eststo clear\
+//females \
+eststo clear\
+eststo: quietly xtreg NHP_EL AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==2, re\
+eststo: quietly xtreg NHP_ER AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==2, re\
+eststo: quietly xtreg NHP_P AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==2, re\
+eststo: quietly xtreg NHP_PA AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==2, re\
+eststo: quietly xtreg NHP_S AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==2, re\
+eststo: quietly xtreg NHP_SI AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==2, re\
+eststo: quietly xtreg NHP AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME if GENDER==2, re\
+esttab, compress \
+eststo clear\
+\
+\
+\
+\
+******Hybrid models\
+xtreg NHP_EL AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, re\
+xtreg NHP_EL AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT  i.TIME, fe\
+xthybrid NHP_EL AGE AGESQ EDUC JOB STDINC MARRIED SIZE SUBJPOSIT TIME GENDER, clusterid(ANONID) p \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+*****Generate time\
+gen TIME1=TIME\
+recode TIME1 2=0 3=0\
+gen TIME2=TIME\
+recode TIME2 1=0 2=1 3=0\
+gen TIME3=TIME\
+recode TIME3 1=0 2=0 3=1\
+\
+gen MALE=GENDER\
+recode MALE 2=0\
+\
+gen EDUC_1=0 if EDUC>=1 & EDUC<=8\
+replace EDUC_1=1 if  EDUC>=1 & EDUC<=3\
+gen EDUC_2=0 if EDUC>=1 & EDUC<=8\
+replace EDUC_2=1 if  EDUC>=4 & EDUC<=6\
+gen EDUC_3=0 if EDUC>=1 & EDUC<=8\
+replace EDUC_3=1 if  EDUC>=7 & EDUC<=8\
+\
+\
+gen SIZE_1=0 if SIZE>=1 & SIZE<=5\
+replace SIZE_1=1 if  SIZE==1 \
+gen SIZE_2=0 if SIZE>=1 & SIZE<=5\
+replace SIZE_2=1 if  SIZE>=2 & SIZE<=3\
+gen SIZE_3=0 if SIZE>=1 & SIZE<=5\
+replace SIZE_3=1 if  SIZE>=4 & SIZE<=5\
+\
+gen SUBJPOSIT_1=0 if SUBJPOSIT>=1 & SUBJPOSIT<=10\
+replace SUBJPOSIT_1=1 if SUBJPOSIT>=1 & SUBJPOSIT<=2\
+gen SUBJPOSIT_2=0 if SUBJPOSIT>=1 & SUBJPOSIT<=10\
+replace SUBJPOSIT_2=1 if SUBJPOSIT>=3 & SUBJPOSIT<=4\
+gen SUBJPOSIT_3=0 if SUBJPOSIT>=1 & SUBJPOSIT<=10\
+replace SUBJPOSIT_3=1 if SUBJPOSIT>=5 & SUBJPOSIT<=6\
+gen SUBJPOSIT_4=0 if SUBJPOSIT>=1 & SUBJPOSIT<=10\
+replace SUBJPOSIT_4=1 if SUBJPOSIT>=7 & SUBJPOSIT<=8\
+gen SUBJPOSIT_5=0 if SUBJPOSIT>=1 & SUBJPOSIT<=10\
+replace SUBJPOSIT_5=1 if SUBJPOSIT>=9 & SUBJPOSIT<=10\
+\
+\
+\
+\
+***checking curvilinear assocation\
+\
+gen AGE_5Y=0 if AGE>=21 & AGE<=95\
+replace AGE_5Y=1 if AGE>=21 & AGE<=25\
+replace AGE_5Y=2 if AGE>=26 & AGE<=30\
+replace AGE_5Y=3 if AGE>=31 & AGE<=35\
+replace AGE_5Y=4 if AGE>=36 & AGE<=40\
+replace AGE_5Y=5 if AGE>=41 & AGE<=45\
+replace AGE_5Y=6 if AGE>=46 & AGE<=50\
+replace AGE_5Y=7 if AGE>=51 & AGE<=55\
+replace AGE_5Y=8 if AGE>=56 & AGE<=60\
+replace AGE_5Y=9 if AGE>=61 & AGE<=65\
+replace AGE_5Y=10 if AGE>=66 & AGE<=70\
+replace AGE_5Y=11 if AGE>=71 & AGE<=75\
+replace AGE_5Y=12 if AGE>=76 & AGE<=95\
+\
+\
+xtreg NHP i.AGE_5Y AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3, fe\
+\
+xtreg NHP i.AGE JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3, re\
+margins, at(AGE=(25(5)80))\
+marginsplot\
+\
+#LUKA############################################\
+\
+***Main results\
+eststo: reg NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3\
+eststo: xtreg NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3, re\
+eststo: xtreg NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3, fe\
+eststo: xthybrid NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3, clusterid(ANONID) p\
+eststo: xthybrid NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+*gen sample_full = e(sample)\
+esttab, bic aic ci \
+eststo clear \
+\
+***Specific aspects of NHP\
+eststo: xthybrid NHP_EL AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_ER AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_P AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_PA AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_S AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_SI AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+esttab, ci  \
+eststo clear \
+\
+\
+***Specific aspects of NHP\
+eststo: xthybrid NHP_EL AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT_1 SUBJPOSIT_2 SUBJPOSIT_4 SUBJPOSIT_5 TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_ER AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3  SUBJPOSIT_1 SUBJPOSIT_2 SUBJPOSIT_4 SUBJPOSIT_5 TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_P AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3  SUBJPOSIT_1 SUBJPOSIT_2 SUBJPOSIT_4 SUBJPOSIT_5 TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_PA AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3  SUBJPOSIT_1 SUBJPOSIT_2 SUBJPOSIT_4 SUBJPOSIT_5 TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_S AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3  SUBJPOSIT_1 SUBJPOSIT_2 SUBJPOSIT_4 SUBJPOSIT_5 TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_SI AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3  SUBJPOSIT_1 SUBJPOSIT_2 SUBJPOSIT_4 SUBJPOSIT_5 TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+esttab, ci \
+eststo clear \
+\
+ \
+\
+****Suppplamnets\
+\
+gen SUBJPOSIT_MALE=SUBJPOSIT*MALE\
+\
+gen SUBJPOSIT_AGE=SUBJPOSIT*AGE\
+\
+gen SUBJPOSIT_EDUC=SUBJPOSIT*EDUC\
+\
+***Specific aspects of NHP by gender interations\
+eststo: xthybrid NHP_EL AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_MALE TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_ER AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_MALE TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_P AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_MALE TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_PA AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_MALE TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_S AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_MALE TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_SI AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_MALE TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+esttab, ci  \
+eststo clear \
+ \
+***Specific aspects of NHP by age intractions \
+eststo: xthybrid NHP_EL AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_AGE TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_ER AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_AGE TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_P AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_AGE TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_PA AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_AGE TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_S AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_AGE TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+eststo: xthybrid NHP_SI AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_AGE TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+esttab, ci  \
+eststo clear \
+\
+***Specific aspects of NHP by age intractions \
+eststo: xthybrid NHP_EL AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_EDUC TIME2 TIME3 MALE EDUC, clusterid(ANONID) p\
+eststo: xthybrid NHP_ER AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_EDUC TIME2 TIME3 MALE EDUC, clusterid(ANONID) p\
+eststo: xthybrid NHP_P AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_EDUC TIME2 TIME3 MALE EDUC, clusterid(ANONID) p\
+eststo: xthybrid NHP_PA AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_EDUC TIME2 TIME3 MALE EDUC, clusterid(ANONID) p\
+eststo: xthybrid NHP_S AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_EDUC TIME2 TIME3 MALE EDUC, clusterid(ANONID) p\
+eststo: xthybrid NHP_SI AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT SUBJPOSIT_EDUC TIME2 TIME3 MALE EDUC, clusterid(ANONID) p\
+esttab, ci  \
+eststo clear \
+  \
+\
+\
+\
+\
+\
+\
+\
+\
+***Main results\
+eststo: reg NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 if AGE>60\
+eststo: xtreg NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 if AGE>60, re\
+eststo: xtreg NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 if AGE>60, fe\
+eststo: xthybrid NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 if AGE>60, clusterid(ANONID) p\
+eststo: xthybrid NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if AGE>60, clusterid(ANONID) p\
+esttab, compress \
+eststo clear  \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+***Figire for supplaments\
+histogram SUBJPOSIT if TIME>=1 & TIME<=3, percent normal\
+\
+\
+\
+*Figure for NHP\
+\
+kdensity NHP if TIME>=1 & TIME<=3, recast(area)\
+kdensity NHP_EL if TIME>=1 & TIME<=3, recast(area)\
+kdensity NHP_ER if TIME>=1 & TIME<=3, recast(area)\
+kdensity NHP_P if TIME>=1 & TIME<=3, recast(area)\
+kdensity NHP_PA if TIME>=1 & TIME<=3, recast(area)\
+kdensity NHP_S if TIME>=1 & TIME<=3, recast(area)\
+kdensity NHP_SI if TIME>=1 & TIME<=3, recast(area)\
+\
+graph combine "E:\\POLPAN_2023\\Figure_SX_NHP.gph" "E:\\POLPAN_2023\\Figure_SX_NHP_EL.gph" "E:\\POLPAN_2023\\Figure_SX_NHP_ER.gph" "E:\\POLPAN_2023\\Figure_SX_NHP_P.gph" "E:\\POLPAN_2023\\Figure_SX_NHP_PA.gph" "E:\\POLPAN_2023\\Figure_SX_NHP_S.gph" "E:\\POLPAN_2023\\Figure_SX_NHP_SI.gph"\
+\
+\
+\
+\
+\
+\
+eststo: xthybrid NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3, clusterid(ANONID) p\
+gen sample_full = e(sample)\
+\
+\
+tab TIME\
+\
+#STAN############################################\
+\
+***Descrioptive\
+xttab TIME if sample_full==1\
+\
+xtsum AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if sample_full==1\
+\
+\
+\
+***Hausman\
+xtreg NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3, fe\
+estimates store fixed\
+xtreg NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3, re\
+hausman fixed ., sigmamore\
+\
+\
+\
+\
+\
+\
+\
+****Suppl\
+\
+gen age_40_90=0\
+replace age_40_90=1 if AGE>40 \
+gen age_45_90=0\
+replace age_45_90=1 if AGE>45 \
+\
+\
+\
+eststo: xthybrid NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if age_40_90==1, clusterid(ANONID) p\
+eststo: xthybrid NHP_EL AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if age_40_90==1, clusterid(ANONID) p\
+eststo: xthybrid NHP_ER AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if age_40_90==1, clusterid(ANONID) p\
+eststo: xthybrid NHP_P AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if age_40_90==1, clusterid(ANONID) p\
+eststo: xthybrid NHP_PA AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if age_40_90==1, clusterid(ANONID) p\
+eststo: xthybrid NHP_S AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if age_40_90==1, clusterid(ANONID) p\
+eststo: xthybrid NHP_SI AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if age_40_90==1, clusterid(ANONID) p\
+esttab, ci  \
+eststo clear \
+\
+\
+eststo: xthybrid NHP AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if age_45_90==1, clusterid(ANONID) p\
+eststo: xthybrid NHP_EL AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if age_45_90==1, clusterid(ANONID) p\
+eststo: xthybrid NHP_ER AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if age_45_90==1, clusterid(ANONID) p\
+eststo: xthybrid NHP_P AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if age_45_90==1, clusterid(ANONID) p\
+eststo: xthybrid NHP_PA AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if age_45_90==1, clusterid(ANONID) p\
+eststo: xthybrid NHP_S AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if age_45_90==1, clusterid(ANONID) p\
+eststo: xthybrid NHP_SI AGE AGESQ JOB STDINC MARRIED SIZE_2 SIZE_3 SUBJPOSIT TIME2 TIME3 MALE EDUC_2 EDUC_3 if age_45_90==1, clusterid(ANONID) p\
+esttab, ci  \
+eststo clear \
+}
