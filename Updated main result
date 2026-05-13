@@ -1,0 +1,45 @@
+install.packages("plm")
+
+# Package load
+library(tidyverse)
+library(plm)
+
+# 2. Put dataset
+df <- read_csv("cleaned_data (1).csv")
+
+# 3. NHP variable generate
+df_processed <- df %>%
+  mutate(
+    # NHP total score generation
+    NHP2008 = rowSums(select(., starts_with("VZ02A")), na.rm = TRUE),
+    NHP2013 = rowSums(select(., starts_with("TP09A")), na.rm = TRUE), # 2013년 문항 확인 필요
+    
+    # Age squared data generation
+    AGESQ2008 = AGE2008^2,
+    AGESQ2013 = AGE2013^2,
+    AGESQ2018 = AGE2018^2,
+    
+    # Gender data swith to 0 or 1 (Female:0, Male:0) 
+    MALE = if_else(GENDER == 1, 1, 0)
+  )
+
+# NHP varioble naming
+df_long <- df_processed %>%
+  pivot_longer(
+    cols = matches("^(AGE|EDUC|JOB|STDINC|SUBJPOSIT|NHP|MARRIED|SIZE|AGESQ).*20(08|13|18)$"),
+    names_to = c(".value", "YEAR"),
+    names_pattern = "(.*)(2008|2013|2018)"
+  ) %>%
+  mutate(
+    YEAR = as.numeric(YEAR),
+    TIME = 1 + (YEAR - 2008) / 5
+  )
+
+# Panal data generate
+p_df <- pdata.frame(df_long, index = c("ANONID", "TIME"))
+
+# Main result analysis (HY part)
+fe_result <- plm(NHP ~ AGE + AGESQ + EDUC2018 + SUBJPOSIT + factor(TIME), 
+                 data = p_df, model = "within")
+
+summary(fe_result)
