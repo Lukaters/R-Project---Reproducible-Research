@@ -2,3 +2,4 @@ Polpan1988_2018_v1 2.csv
 *.csv
 .DS_Store
 **/.DS_Store
+.Rproj.user
